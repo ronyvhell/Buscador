@@ -1,0 +1,417 @@
+:root {
+    --bg-color: #141414;
+    --font-text: 'DM Sans', sans-serif;
+    --font-color: #FFF;
+    --color-btn: #F29934;
+    --blur-input: rgba(255, 255, 255, 0.10);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-text);
+    color: var(--font-color);
+    background-color: var(--bg-color);
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px 16px;
+}
+
+h1 {
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1;
+    margin: 0;
+}
+
+p {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.2;
+    margin: 0;
+}
+
+.contenedor {
+    width: 100%;
+    max-width: 623px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo {
+    margin-bottom: 24px;
+}
+
+.logo img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.text-inicial {
+    width: 100%;
+    margin-bottom: 24px;
+}
+
+.text-inicial h1 {
+    margin-bottom: 17px;
+}
+
+.buscador {
+    position: relative;
+    width: 100%;
+    max-width: 620px;
+    margin-bottom: 60px;
+}
+
+.buscador_campo {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+    height: 70px;
+    padding: 0 18px;
+    border-radius: 15px;
+    background:
+        linear-gradient(180deg, rgba(255,255,255,0.14), rgba(255,255,255,0.06)),
+        rgba(25, 25, 25, 0.22);
+    border: 1px solid rgba(255,255,255,0.18);
+    box-shadow:
+        0 10px 35px rgba(0,0,0,0.28),
+        inset 0 1px 0 rgba(255,255,255,0.16),
+        inset 0 -1px 0 rgba(255,255,255,0.05);
+    -webkit-backdrop-filter: blur(22px) saturate(180%);
+    backdrop-filter: blur(22px) saturate(180%);
+    overflow: hidden;
+}
+
+.buscador_campo::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    background:
+        radial-gradient(circle at top left, rgba(255,255,255,0.20), transparent 28%),
+        radial-gradient(circle at bottom right, rgba(255,255,255,0.08), transparent 30%);
+}
+
+.buscador .lucide-map {
+    position: relative;
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    z-index: 2;
+}
+
+#buscar {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 400;
+    font-family: var(--font-text);
+    letter-spacing: 0.01em;
+}
+
+#buscar::placeholder {
+    color: rgba(255,255,255,0.92);
+}
+
+.buscador_limpiar {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border: none;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.08);
+    color: rgba(255,255,255,0.9);
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.9);
+    transition: 0.25s ease;
+    flex-shrink: 0;
+}
+
+.buscador_limpiar.activo {
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);
+}
+
+.buscador_limpiar:hover {
+    background: rgba(255,255,255,0.14);
+}
+
+.buscador_dropdown {
+    position: absolute;
+    top: calc(100% + 14px);
+    left: 0;
+    width: 100%;
+    padding: 16px 18px;
+    border-radius: 22px;
+    background:
+        linear-gradient(180deg, rgba(255,255,255,0.14), rgba(255,255,255,0.05)),
+        rgba(28, 28, 28, 0.20);
+    border: 1px solid rgba(255,255,255,0.16);
+    box-shadow:
+        0 18px 40px rgba(0,0,0,0.30),
+        inset 0 1px 0 rgba(255,255,255,0.12);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    backdrop-filter: blur(24px) saturate(180%);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+    transition: 0.28s ease;
+    max-height: 340px;
+    overflow-y: auto;
+    z-index: 50;
+}
+
+.buscador_dropdown.activo {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.buscador_dropdown::-webkit-scrollbar {
+    width: 7px;
+}
+
+.buscador_dropdown::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.18);
+    border-radius: 999px;
+}
+
+.departamento_bloque + .departamento_bloque {
+    margin-top: 14px;
+}
+
+.departamento_titulo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 400;
+    text-align: left;
+}
+
+.departamento_titulo::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: rgba(255,255,255,0.55);
+}
+
+.destino_item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 7px 6px;
+    border: none;
+    background: transparent;
+    color: rgba(255,255,255,0.96);
+    font-size: 20px;
+    font-weight: 400;
+    font-family: var(--font-text);
+    text-align: left;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.22s ease;
+}
+
+.destino_item:hover {
+    background: rgba(255,255,255,0.08);
+    transform: translateX(2px);
+}
+
+.destino_item svg {
+    flex-shrink: 0;
+    width: 15px;
+    height: 15px;
+    color: rgba(255,255,255,0.95);
+}
+
+.dropdown_vacio {
+    color: rgba(255,255,255,0.82);
+    font-size: 20px;
+    font-weight: 400;
+    padding: 4px 2px;
+    text-align: left;
+}
+
+#explorador {
+    width: 250px;
+    height: 50px;
+    font-size: 20px;
+    font-weight: 700;
+    font-family: var(--font-text);
+    color: var(--font-color);
+    background-color: var(--color-btn);
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 10px 24px rgba(242, 153, 52, 0.22);
+}
+
+#explorador:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 14px 28px rgba(242, 153, 52, 0.28);
+}
+
+#explorador:active {
+    transform: translateY(0);
+}
+
+/* TOAST GLASS */
+.toast_container {
+    position: fixed;
+    top: 24px;
+    right: 24px;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+.toast_glass {
+    width: 320px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px 16px;
+    border-radius: 16px;
+    background:
+        linear-gradient(180deg, rgba(255,255,255,0.14), rgba(255,255,255,0.05)),
+        rgba(24, 24, 24, 0.28);
+    border: 1px solid rgba(255,255,255,0.18);
+    box-shadow:
+        0 18px 35px rgba(0,0,0,0.28),
+        inset 0 1px 0 rgba(255,255,255,0.12);
+    -webkit-backdrop-filter: blur(22px) saturate(180%);
+    backdrop-filter: blur(22px) saturate(180%);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px) translateX(10px);
+    transition: 0.28s ease;
+    pointer-events: auto;
+}
+
+.toast_glass.activo {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) translateX(0);
+}
+
+.toast_icono {
+    width: 34px;
+    height: 34px;
+    border-radius: 999px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(242, 153, 52, 0.12);
+    border: 1px solid rgba(242, 153, 52, 0.18);
+}
+
+.toast_texto {
+    flex: 1;
+    text-align: left;
+}
+
+.toast_texto strong {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.toast_texto p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.35;
+    color: rgba(255,255,255,0.88);
+}
+
+.toast_cerrar {
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.06);
+    color: rgba(255,255,255,0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.2s ease;
+    flex-shrink: 0;
+}
+
+.toast_cerrar:hover {
+    background: rgba(255,255,255,0.12);
+}
+
+@media (max-width: 680px) {
+    body {
+        padding: 20px 14px;
+    }
+
+    .contenedor {
+        max-width: 100%;
+    }
+
+    .logo img {
+        width: 100%;
+        max-width: 420px;
+    }
+
+    .buscador {
+        max-width: 100%;
+    }
+
+    .buscador_campo {
+        padding: 0 15px;
+    }
+
+    #buscar {
+        font-size: 18px;
+    }
+
+    .destino_item,
+    .departamento_titulo,
+    .dropdown_vacio {
+        font-size: 18px;
+    }
+
+    .toast_container {
+        top: 16px;
+        right: 16px;
+        left: 16px;
+    }
+
+    .toast_glass {
+        width: 100%;
+    }
+}
