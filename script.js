@@ -16,7 +16,7 @@ const destinos = [
             {
                 nombre: "Cartagena de Indias",
                 slug: "cartagena-de-indias",
-                url: "tours.html?destino=cartagena-de-indias"
+                url: "https://buscador.colombiatourstickets.com/?"
             },
         
         ]
