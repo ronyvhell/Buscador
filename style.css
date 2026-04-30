@@ -19,7 +19,6 @@ body{
     min-height: 100svh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     padding: 24px 16px;
 }
@@ -44,7 +43,9 @@ p {
     text-align: center;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
+    flex: 1;
 }
 
 .logo {
@@ -289,49 +290,68 @@ p {
 
 .footer_aliados {
     width: 100%;
-    max-width: 980px;
-    margin-top: 48px;
-    padding-top: 28px;
-    border-top: 1px solid rgba(255, 255, 255, 0.18);
+    max-width: 880px;
+    margin-top: 32px;
+    padding-top: 18px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.45);
 }
 
 .footer_aliados_contenido {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
-    gap: 44px;
+    align-items: center;
+    gap: 36px;
     flex-wrap: wrap;
 }
 
 .aliado_bloque {
-    width: 100%;
-    max-width: 420px;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    max-width: 360px;
+    text-align: left;
 }
 
 .aliado_bloque img {
-    max-width: 220px;
-    width: 100%;
-    height: auto;
-    margin: 0 auto 14px;
-    display: block;
+    height: 30px;
+    width: auto;
+    flex-shrink: 0;
+    opacity: 0.85;
 }
 
 .aliado_bloque p {
-    font-size: 16px;
+    margin: 0;
+    font-size: 11.5px;
     line-height: 1.35;
-    color: rgba(255, 255, 255, 0.88);
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    color: rgba(255, 255, 255, 0.55);
 }
 
-.aliado_bloque p + p {
-    margin-top: 8px;
+.aliado_bloque p span {
+    color: rgba(255, 255, 255, 0.78);
+    font-weight: 500;
+}
+
+.aliado_bloque .aliado_extra {
+    margin-top: 2px;
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.38);
+}
+
+.aliado_separador {
+    width: 1px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.10);
 }
 
 .footer_derechos {
-    margin-top: 22px;
-    text-align: center;
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.72);
+    margin-top: 18px;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    color: rgba(255, 255, 255, 0.32);
 }
 
 /* TOAST GLASS */
@@ -487,19 +507,39 @@ p {
     }
 
     .footer_aliados {
-        margin-top: 36px;
-        padding-top: 22px;
+        margin-top: 28px;
+        padding-top: 14px;
     }
 
     .footer_aliados_contenido {
-        gap: 26px;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .aliado_bloque {
+        max-width: 320px;
+        gap: 10px;
     }
 
     .aliado_bloque img {
-        max-width: 190px;
+        height: 26px;
     }
 
     .aliado_bloque p {
-        font-size: 15px;
+        font-size: 11px;
+    }
+
+    .aliado_bloque .aliado_extra {
+        font-size: 10.5px;
+    }
+
+    .aliado_separador {
+        width: 80px;
+        height: 1px;
+    }
+
+    .footer_derechos {
+        margin-top: 14px;
+        font-size: 10.5px;
     }
 }
