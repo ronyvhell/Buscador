@@ -18,6 +18,7 @@ body{
     min-height: 100vh;
     min-height: 100dvh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 24px 16px;
@@ -293,6 +294,53 @@ p {
     transform: translateY(0);
 }
 
+.footer_aliados {
+    width: 100%;
+    max-width: 980px;
+    margin-top: 48px;
+    padding-top: 28px;
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.footer_aliados_contenido {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 44px;
+    flex-wrap: wrap;
+}
+
+.aliado_bloque {
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+}
+
+.aliado_bloque img {
+    max-width: 220px;
+    width: 100%;
+    height: auto;
+    margin: 0 auto 14px;
+    display: block;
+}
+
+.aliado_bloque p {
+    font-size: 16px;
+    line-height: 1.35;
+    color: rgba(255, 255, 255, 0.88);
+}
+
+.aliado_bloque p + p {
+    margin-top: 8px;
+}
+
+.footer_derechos {
+    margin-top: 22px;
+    text-align: center;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.72);
+}
+
 /* TOAST GLASS */
 .toast_container {
     position: fixed;
@@ -422,5 +470,22 @@ p {
 
     .toast_glass {
         width: 100%;
+    }
+
+    .footer_aliados {
+        margin-top: 36px;
+        padding-top: 22px;
+    }
+
+    .footer_aliados_contenido {
+        gap: 26px;
+    }
+
+    .aliado_bloque img {
+        max-width: 190px;
+    }
+
+    .aliado_bloque p {
+        font-size: 15px;
     }
 }
