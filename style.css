@@ -289,48 +289,74 @@ p {
 }
 
 .footer_aliados {
+    position: relative;
     width: 100%;
     max-width: 880px;
-    margin-top: 32px;
-    padding-top: 18px;
+    margin-top: 36px;
+    padding-top: 26px;
     text-align: center;
 }
 
-.footer_avalado {
-    margin: 0 0 14px;
-    font-size: 10.5px;
-    font-weight: 500;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.28);
+.footer_aliados::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.32) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
 }
 
 .footer_aliados_contenido {
-    display: flex;
+    display: grid;
+    grid-template-columns: auto 1px auto;
     justify-content: center;
     align-items: center;
-    gap: 36px;
-    flex-wrap: wrap;
+    column-gap: 24px;
 }
 
 .aliado_bloque {
     display: flex;
     align-items: center;
-    gap: 12px;
-    max-width: 360px;
+    justify-content: flex-start;
+    gap: 14px;
     text-align: left;
 }
 
+.aliado_bloque_aval {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    text-align: left;
+}
+
+.aliado_etiqueta {
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: rgba(255, 255, 255, 0.60);
+}
+
 .aliado_bloque img {
-    height: 36px;
+    height: 52px;
     width: auto;
     flex-shrink: 0;
-    opacity: 0.80;
+    opacity: 0.9;
+}
+
+.aliado_logo_fede {
+    height: 62px;
 }
 
 .aliado_logo_contigo {
-    height: 36px;
-    opacity: 0.80;
+    height: 46px;
+    opacity: 0.9;
 }
 
 .aliado_bloque p {
@@ -353,8 +379,13 @@ p {
 
 .aliado_separador {
     width: 1px;
-    height: 36px;
-    background: rgba(255, 255, 255, 0.10);
+    height: 92px;
+    background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.36) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
     flex-shrink: 0;
 }
 
@@ -519,33 +550,43 @@ p {
     }
 
     .footer_aliados {
-        margin-top: 36px;
-        padding-top: 16px;
-    }
-
-    .footer_avalado {
-        margin-bottom: 14px;
-        font-size: 10px;
+        margin-top: 32px;
+        padding-top: 22px;
     }
 
     .footer_aliados_contenido {
+        display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
         align-items: center;
-        gap: 14px;
+        gap: 0;
     }
 
     .aliado_bloque {
         flex: 1;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
         text-align: center;
-        gap: 10px;
-        max-width: none;
+        gap: 8px;
+        padding: 0 12px;
+    }
+
+    .aliado_bloque_aval {
+        gap: 6px;
+    }
+
+    .aliado_etiqueta {
+        font-size: 9.5px;
+        letter-spacing: 0.14em;
     }
 
     .aliado_bloque img {
         height: 40px;
+    }
+
+    .aliado_logo_fede {
+        height: 46px;
     }
 
     .aliado_logo_contigo {
@@ -567,8 +608,8 @@ p {
 
     .aliado_separador {
         width: 1px;
-        height: auto;
-        align-self: stretch;
+        height: 96px;
+        align-self: auto;
     }
 
     .footer_derechos {
