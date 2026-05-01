@@ -322,25 +322,14 @@ p {
 }
 
 .aliado_bloque img {
-    height: 28px;
+    height: 36px;
     width: auto;
     flex-shrink: 0;
-    opacity: 0.75;
+    opacity: 0.80;
 }
 
 .aliado_logo_contigo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    padding: 6px 10px;
-    border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.10);
-    background: rgba(255, 255, 255, 0.04);
-}
-
-.aliado_logo_contigo img {
-    height: 22px;
+    height: 36px;
     opacity: 0.80;
 }
 
@@ -545,17 +534,9 @@ p {
         gap: 10px;
     }
 
-    .aliado_bloque img {
-        height: 24px;
-    }
-
+    .aliado_bloque img,
     .aliado_logo_contigo {
-        padding: 5px 8px;
-        border-radius: 7px;
-    }
-
-    .aliado_logo_contigo img {
-        height: 18px;
+        height: 30px;
     }
 
     .aliado_bloque p {
