@@ -347,6 +347,10 @@ p {
     font-weight: 500;
 }
 
+.aliado_texto_mobile {
+    display: none;
+}
+
 .aliado_separador {
     width: 1px;
     height: 36px;
@@ -453,13 +457,13 @@ p {
 
 @media (max-width: 680px) {
     body {
-        justify-content: center;
         align-items: center;
         padding: 24px 14px;
     }
 
     .contenedor {
         max-width: 100%;
+        min-height: calc(100svh - 48px);
     }
 
     .logo {
@@ -515,41 +519,60 @@ p {
     }
 
     .footer_aliados {
-        margin-top: 28px;
-        padding-top: 14px;
+        margin-top: 36px;
+        padding-top: 16px;
     }
 
     .footer_avalado {
-        margin-bottom: 12px;
+        margin-bottom: 14px;
         font-size: 10px;
     }
 
     .footer_aliados_contenido {
-        flex-direction: column;
-        gap: 16px;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        gap: 14px;
     }
 
     .aliado_bloque {
-        max-width: 300px;
+        flex: 1;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
         gap: 10px;
+        max-width: none;
     }
 
-    .aliado_bloque img,
+    .aliado_bloque img {
+        height: 40px;
+    }
+
     .aliado_logo_contigo {
-        height: 30px;
+        height: 28px;
     }
 
     .aliado_bloque p {
-        font-size: 11px;
+        font-size: 10.5px;
+        line-height: 1.4;
+    }
+
+    .aliado_texto_desktop {
+        display: none;
+    }
+
+    .aliado_texto_mobile {
+        display: block;
     }
 
     .aliado_separador {
-        width: 60px;
-        height: 1px;
+        width: 1px;
+        height: auto;
+        align-self: stretch;
     }
 
     .footer_derechos {
-        margin-top: 14px;
+        margin-top: 16px;
         font-size: 10.5px;
     }
 }
